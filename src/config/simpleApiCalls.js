@@ -3,7 +3,7 @@ import axios from "axios";
 const createResource = (api, data, token) => {
     return new Promise((resolve, reject) => {
         axios
-            .post(`${api}`, data, { headers: { Authorization: token } })
+            .post(`${api}`, data, { headers: { Authorization: `Bearer ${token}` } })
             .then((response) => {
                 resolve(response);
             })
@@ -16,7 +16,7 @@ const createResource = (api, data, token) => {
 const getResource = (api, token) => {
     return new Promise((resolve, reject) => {
         axios
-            .get(`${api}`, { headers: { Authorization: token } })
+            .get(`${api}`, { headers: { Authorization: `Bearer ${token}` }})
             .then((response) => {
                 resolve(response);
             })
@@ -29,7 +29,7 @@ const getResource = (api, token) => {
 const getResourceById = (api, data, token) => {
     return new Promise((resolve, reject) => {
         axios
-            .get(`${api}/${data.employeeId}`, { headers: { Authorization: token } })
+            .get(`${api}/${data.employeeId}`, { headers: { Authorization: `Bearer ${token}` } })
             .then((response) => {
                 resolve(response);
             })
@@ -42,7 +42,7 @@ const getResourceById = (api, data, token) => {
 const updateResource = (api, data, token) => {
     return new Promise((resolve, reject) => {
         axios
-            .put(`${api}`, data, { headers: { Authorization: token } })
+            .put(`${api}`, data, { headers: { Authorization: `Bearer ${token}` } })
             .then((response) => {
                 resolve(response);
             })
@@ -57,7 +57,7 @@ const deleteResource = (api, data, token) => {
         axios({
             method: "delete",
             url: `${api}?employeeId=${data.employeeId}`,
-            headers: { Authorization: token },
+            headers: { Authorization: `Bearer ${token}` },
         })
             .then((response) => {
                 resolve(response);

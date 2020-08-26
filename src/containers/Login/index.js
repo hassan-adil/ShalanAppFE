@@ -119,6 +119,14 @@ class Login extends Component {
               />
               <CustomButton btnText={"Log In"} btntype={"submit"} onClick={(event) => this.handleLogin(event)} />
             </form>
+            <p className="my-2">
+              <small>You don't have an account yet?</small>
+              <strong
+                className="ml-1 text-primary"
+                style={{ cursor: 'pointer' }}
+                onClick={()=>this.handleNavigation('/register')}
+              >Register here!</strong>
+            </p>
           </div>
         </div>
       </div>

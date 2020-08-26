@@ -70,7 +70,6 @@ class ApiSauce {
   }
 
   handlePromise = (resolve, reject, response) => {
-    console.log(response, "str")
     if (
       response.ok &&
       response.data &&
